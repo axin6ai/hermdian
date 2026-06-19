@@ -33,7 +33,7 @@
 
 | 聊天界面 | 设置面板 |
 |----------|----------|
-| ![chat](./docs/assets/hermdian-chat.png) | ![settings](./docs/assets/hermdian-settings.png) |
+| ![chat](./docs/assets/chating.png) | ![settings](./docs/assets/settings.png) |
 
 ---
 
