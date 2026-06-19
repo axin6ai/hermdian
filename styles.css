@@ -1,0 +1,1424 @@
+/* Hermdian — Obsidian Plugin Styles */
+
+/* ==================== Container ==================== */
+.hermdian {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background: var(--background-primary);
+  font-family: var(--font-interface);
+  overflow: hidden;
+}
+
+/* ==================== Header ==================== */
+.hermdian-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: var(--background-secondary);
+  border-bottom: 1px solid var(--background-modifier-border);
+  flex-shrink: 0;
+  min-height: 40px;
+}
+
+.hermdian-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hermdian-logo {
+  display: flex;
+  align-items: center;
+  color: var(--interactive-accent);
+}
+
+.hermdian-logo svg { width: 18px; height: 18px; }
+
+.hermdian-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-normal);
+}
+
+.hermdian-header-center {
+  display: flex;
+  align-items: center;
+}
+
+.hermdian-model-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  background: var(--background-modifier-hover);
+  border-radius: 12px;
+  font-size: 11px;
+  color: var(--text-muted);
+  border: 1px solid var(--background-modifier-border);
+}
+
+.hermdian-badge-icon { display: flex; }
+.hermdian-badge-icon svg { width: 12px; height: 12px; }
+
+.hermdian-header-right {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.hermdian-header-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all 0.15s;
+}
+
+.hermdian-header-btn:hover {
+  background: var(--background-modifier-hover);
+  color: var(--text-normal);
+}
+
+.hermdian-header-btn svg { width: 14px; height: 14px; }
+
+/* ==================== Messages ==================== */
+.hermdian-messages {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hermdian-msg {
+  display: flex;
+  flex-direction: column;
+  max-width: 85%;
+  animation: hermdian-fadeIn 0.2s ease;
+}
+
+@keyframes hermdian-fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hermdian-msg-user {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+.hermdian-msg-ai {
+  align-self: flex-start;
+  align-items: flex-start;
+}
+
+.hermdian-msg-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+  padding: 0 4px;
+}
+
+.hermdian-msg-arrow {
+  color: var(--color-green);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.hermdian-msg-time {
+  font-size: 10px;
+  color: var(--text-faint);
+  background: var(--background-modifier-hover);
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+/* ==================== Bubbles ==================== */
+.hermdian-bubble {
+  padding: 10px 14px;
+  border-radius: 12px;
+  line-height: 1.6;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+.hermdian-bubble-user {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-bottom-right-radius: 4px;
+}
+
+.hermdian-bubble-ai {
+  background: var(--background-secondary);
+  color: var(--text-normal);
+  border: 1px solid var(--background-modifier-border);
+  border-bottom-left-radius: 4px;
+}
+
+.hermdian-bubble-error {
+  background: rgba(248, 81, 73, 0.08);
+  color: var(--text-error);
+  border: 1px solid rgba(248, 81, 73, 0.3);
+  border-bottom-left-radius: 4px;
+}
+
+/* ==================== Markdown Content ==================== */
+.hermdian-bubble-ai > *:first-child { margin-top: 0; }
+.hermdian-bubble-ai > *:last-child { margin-bottom: 0; }
+.hermdian-bubble-ai p { margin: 0 0 8px 0; }
+.hermdian-bubble-ai p:last-child { margin-bottom: 0; }
+.hermdian-bubble-ai strong { font-weight: 600; }
+.hermdian-bubble-ai a { color: var(--text-accent); text-decoration: none; }
+.hermdian-bubble-ai a:hover { text-decoration: underline; }
+.hermdian-bubble-ai ul, .hermdian-bubble-ai ol { margin: 6px 0; padding-left: 20px; }
+.hermdian-bubble-ai li { margin: 3px 0; }
+
+.hermdian-bubble-ai code {
+  background: var(--background-modifier-hover);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-family: var(--font-monospace);
+  font-size: 0.9em;
+}
+
+.hermdian-bubble-ai pre {
+  background: var(--background-primary);
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 8px 0;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.hermdian-bubble-ai pre code {
+  background: transparent;
+  padding: 0;
+  font-size: 0.85em;
+}
+
+.hermdian-bubble-ai blockquote {
+  border-left: 3px solid var(--text-faint);
+  padding-left: 12px;
+  margin: 8px 0;
+  color: var(--text-muted);
+}
+
+.hermdian-bubble-ai table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 8px 0;
+  font-size: 0.9em;
+}
+
+.hermdian-bubble-ai th, .hermdian-bubble-ai td {
+  border: 1px solid var(--background-modifier-border);
+  padding: 5px 8px;
+  text-align: left;
+}
+
+.hermdian-bubble-ai th {
+  background: var(--background-modifier-hover);
+  font-weight: 600;
+}
+
+/* ==================== Thinking Animation ==================== */
+.hermdian-thinking {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 80px;
+}
+
+.hermdian-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--background-modifier-border);
+  border-top-color: var(--interactive-accent);
+  border-radius: 50%;
+  animation: hermdian-spin 0.8s linear infinite;
+}
+
+@keyframes hermdian-spin {
+  to { transform: rotate(360deg); }
+}
+
+.hermdian-thinking-text {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ==================== Input Area ==================== */
+.hermdian-input-area {
+  padding: 12px 16px;
+  background: var(--background-secondary);
+  border-top: 1px solid var(--background-modifier-border);
+  flex-shrink: 0;
+}
+
+.hermdian-context-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.hermdian-context-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  background: var(--background-modifier-hover);
+  border-radius: 4px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.hermdian-context-tag .hermdian-tag-icon { display: flex; }
+.hermdian-context-tag .hermdian-tag-icon svg { width: 11px; height: 11px; }
+
+.hermdian-context-selection {
+  background: var(--text-highlight-bg);
+  color: var(--text-normal);
+}
+
+.hermdian-input-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.hermdian-input {
+  flex: 1;
+  width: 100%;
+  min-height: 38px;
+  max-height: 100px;
+  padding: 9px 12px;
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 10px;
+  color: var(--text-normal);
+  font-family: var(--font-text);
+  font-size: 13px;
+  line-height: 1.5;
+  resize: none;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+
+.hermdian-input:focus {
+  outline: none;
+  border-color: var(--interactive-accent);
+}
+
+.hermdian-input::placeholder { color: var(--text-faint); }
+
+.hermdian-send-btn {
+  width: 38px;
+  height: 38px;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.hermdian-send-btn:hover { filter: brightness(1.1); }
+.hermdian-send-btn:active { transform: scale(0.95); }
+.hermdian-send-btn svg { width: 16px; height: 16px; }
+
+/* ==================== Status Bar ==================== */
+.hermdian-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--background-modifier-border);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+}
+
+.hermdian-status-left, .hermdian-status-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hermdian-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  background: var(--background-modifier-hover);
+  border-radius: 4px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.hermdian-tag-icon { display: flex; }
+.hermdian-tag-icon svg { width: 11px; height: 11px; }
+
+.hermdian-toggle {
+  cursor: pointer;
+  user-select: none;
+}
+
+.hermdian-toggle:hover {
+  background: var(--background-modifier-active-hover);
+}
+
+.hermdian-toggle input { display: none; }
+
+.hermdian-toggle:has(input:checked) {
+  background: rgba(var(--color-accent-rgb), 0.15);
+  color: var(--text-accent);
+}
+
+.hermdian-status-file {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ==================== Scrollbar ==================== */
+.hermdian-messages::-webkit-scrollbar { width: 5px; }
+.hermdian-messages::-webkit-scrollbar-track { background: transparent; }
+.hermdian-messages::-webkit-scrollbar-thumb { background: var(--background-modifier-border); border-radius: 3px; }
+.hermdian-messages::-webkit-scrollbar-thumb:hover { background: var(--text-faint); }
+
+/* ==================== Settings Page ==================== */
+.hermdian-setting-hint {
+  color: var(--text-muted);
+  font-size: 13px;
+  font-style: italic;
+}
+
+.hermdian-setting-muted {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.hermdian-provider-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.hermdian-provider-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background: var(--background-secondary);
+  border-radius: 6px;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.hermdian-provider-item.active {
+  border-color: var(--interactive-accent);
+}
+
+.hermdian-provider-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hermdian-provider-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.hermdian-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hermdian-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hermdian-form-label {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.hermdian-form-hint {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.hermdian-form-input {
+  width: 100%;
+  padding: 8px 10px;
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  color: var(--text-normal);
+  font-family: var(--font-text);
+  font-size: 13px;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+
+.hermdian-form-input:focus {
+  outline: none;
+  border-color: var(--interactive-accent);
+}
+
+.hermdian-form-input::placeholder {
+  color: var(--text-faint);
+}
+
+.hermdian-modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+/* ==================== Copy Button ==================== */
+.hermdian-bubble-hoverable {
+  position: relative;
+}
+
+.hermdian-copy-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 10;
+}
+
+.hermdian-copy-btn svg {
+  width: 12px;
+  height: 12px;
+  color: var(--text-muted);
+}
+
+.hermdian-bubble-hoverable:hover .hermdian-copy-btn {
+  opacity: 1;
+}
+
+.hermdian-copy-btn:hover {
+  background: var(--background-modifier-hover);
+}
+
+.hermdian-copy-btn:hover svg {
+  color: var(--text-normal);
+}
+
+/* User bubble copy button */
+.hermdian-bubble-user .hermdian-copy-btn {
+  background: var(--interactive-accent);
+  border-color: var(--interactive-accent);
+}
+
+.hermdian-bubble-user .hermdian-copy-btn svg {
+  color: var(--text-on-accent);
+}
+
+.hermdian-bubble-user .hermdian-copy-btn:hover {
+  filter: brightness(1.1);
+}
+/* Hermdian — Full Width Obsidian View */
+
+/* ==================== Override Obsidian's view-content ==================== */
+/* This is the KEY to make our view fill the entire panel */
+.hermdian.view-content {
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+/* ==================== Container ==================== */
+.hermdian {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background: var(--background-primary);
+  font-family: var(--font-interface);
+  overflow: hidden;
+}
+
+/* ==================== Header ==================== */
+.hermdian-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: var(--background-secondary);
+  border-bottom: 1px solid var(--background-modifier-border);
+  flex-shrink: 0;
+  min-height: 40px;
+}
+
+.hermdian-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hermdian-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--interactive-accent);
+}
+
+.hermdian-logo svg {
+  width: 18px;
+  height: 18px;
+}
+
+.hermdian-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-normal);
+}
+
+.hermdian-header-center {
+  display: flex;
+  align-items: center;
+}
+
+.hermdian-model-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  background: var(--background-modifier-hover);
+  border-radius: 12px;
+  font-size: 11px;
+  color: var(--text-muted);
+  border: 1px solid var(--background-modifier-border);
+}
+
+.hermdian-badge-icon {
+  display: flex;
+}
+
+.hermdian-badge-icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+.hermdian-header-right {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.hermdian-header-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all 0.15s;
+}
+
+.hermdian-header-btn:hover {
+  background: var(--background-modifier-hover);
+  color: var(--text-normal);
+}
+
+.hermdian-header-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ==================== Messages Area ==================== */
+.hermdian-messages {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Message row */
+.hermdian-msg {
+  display: flex;
+  flex-direction: column;
+  max-width: 85%;
+  animation: hermdian-fadeIn 0.2s ease;
+}
+
+@keyframes hermdian-fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* User messages - RIGHT side */
+.hermdian-msg-user {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+/* AI messages - LEFT side */
+.hermdian-msg-ai {
+  align-self: flex-start;
+  align-items: flex-start;
+}
+
+/* Message header */
+.hermdian-msg-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+  padding: 0 4px;
+}
+
+.hermdian-msg-arrow {
+  color: var(--color-green);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.hermdian-msg-time {
+  font-size: 10px;
+  color: var(--text-faint);
+  background: var(--background-modifier-hover);
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+/* ==================== Bubbles ==================== */
+.hermdian-bubble {
+  padding: 10px 14px;
+  border-radius: 12px;
+  line-height: 1.6;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+/* User bubble */
+.hermdian-bubble-user {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-bottom-right-radius: 4px;
+}
+
+/* AI bubble */
+.hermdian-bubble-ai {
+  background: var(--background-secondary);
+  color: var(--text-normal);
+  border: 1px solid var(--background-modifier-border);
+  border-bottom-left-radius: 4px;
+}
+
+/* Error bubble */
+.hermdian-bubble-error {
+  background: rgba(248, 81, 73, 0.08);
+  color: var(--text-error);
+  border: 1px solid rgba(248, 81, 73, 0.3);
+  border-bottom-left-radius: 4px;
+  font-size: 13px;
+}
+
+/* ==================== AI Bubble Content (Markdown) ==================== */
+.hermdian-bubble-ai > *:first-child {
+  margin-top: 0;
+}
+
+.hermdian-bubble-ai > *:last-child {
+  margin-bottom: 0;
+}
+
+.hermdian-bubble-ai p {
+  margin: 0 0 8px 0;
+}
+
+.hermdian-bubble-ai p:last-child {
+  margin-bottom: 0;
+}
+
+.hermdian-bubble-ai strong {
+  font-weight: 600;
+}
+
+.hermdian-bubble-ai a {
+  color: var(--text-accent);
+  text-decoration: none;
+}
+
+.hermdian-bubble-ai a:hover {
+  text-decoration: underline;
+}
+
+.hermdian-bubble-ai ul,
+.hermdian-bubble-ai ol {
+  margin: 6px 0;
+  padding-left: 20px;
+}
+
+.hermdian-bubble-ai li {
+  margin: 3px 0;
+}
+
+.hermdian-bubble-ai code {
+  background: var(--background-modifier-hover);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-family: var(--font-monospace);
+  font-size: 0.9em;
+}
+
+.hermdian-bubble-ai pre {
+  background: var(--background-primary);
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 8px 0;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.hermdian-bubble-ai pre code {
+  background: transparent;
+  padding: 0;
+  font-size: 0.85em;
+}
+
+.hermdian-bubble-ai blockquote {
+  border-left: 3px solid var(--text-faint);
+  padding-left: 12px;
+  margin: 8px 0;
+  color: var(--text-muted);
+}
+
+.hermdian-bubble-ai h1,
+.hermdian-bubble-ai h2,
+.hermdian-bubble-ai h3 {
+  margin: 10px 0 6px 0;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.hermdian-bubble-ai hr {
+  border: none;
+  border-top: 1px solid var(--background-modifier-border);
+  margin: 8px 0;
+}
+
+.hermdian-bubble-ai table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 8px 0;
+  font-size: 0.9em;
+}
+
+.hermdian-bubble-ai th,
+.hermdian-bubble-ai td {
+  border: 1px solid var(--background-modifier-border);
+  padding: 5px 8px;
+  text-align: left;
+}
+
+.hermdian-bubble-ai th {
+  background: var(--background-modifier-hover);
+  font-weight: 600;
+}
+
+/* ==================== Thinking Animation ==================== */
+.hermdian-thinking {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 80px;
+}
+
+.hermdian-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--background-modifier-border);
+  border-top-color: var(--interactive-accent);
+  border-radius: 50%;
+  animation: hermdian-spin 0.8s linear infinite;
+}
+
+@keyframes hermdian-spin {
+  to { transform: rotate(360deg); }
+}
+
+.hermdian-thinking-text {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ==================== Input Area ==================== */
+.hermdian-input-area {
+  padding: 12px 16px;
+  background: var(--background-secondary);
+  border-top: 1px solid var(--background-modifier-border);
+  flex-shrink: 0;
+}
+
+/* Context bar */
+.hermdian-context-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.hermdian-context-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  background: var(--background-modifier-hover);
+  border-radius: 4px;
+  font-size: 11px;
+  color: var(--text-muted);
+  border: 1px solid var(--background-modifier-border);
+}
+
+.hermdian-context-tag .hermdian-tag-icon {
+  display: flex;
+}
+
+.hermdian-context-tag .hermdian-tag-icon svg {
+  width: 11px;
+  height: 11px;
+}
+
+.hermdian-context-selection {
+  background: var(--text-highlight-bg);
+  color: var(--text-normal);
+}
+
+/* Input row - FULL WIDTH */
+.hermdian-input-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.hermdian-input {
+  flex: 1;
+  width: 100%;
+  min-height: 38px;
+  max-height: 100px;
+  padding: 9px 12px;
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 10px;
+  color: var(--text-normal);
+  font-family: var(--font-text);
+  font-size: 13px;
+  line-height: 1.5;
+  resize: none;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+
+.hermdian-input:focus {
+  outline: none;
+  border-color: var(--interactive-accent);
+}
+
+.hermdian-input::placeholder {
+  color: var(--text-faint);
+}
+
+.hermdian-send-btn {
+  width: 38px;
+  height: 38px;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.hermdian-send-btn:hover {
+  filter: brightness(1.1);
+}
+
+.hermdian-send-btn:active {
+  transform: scale(0.95);
+}
+
+.hermdian-send-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Status bar */
+.hermdian-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+.hermdian-status-left,
+.hermdian-status-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hermdian-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  background: var(--background-modifier-hover);
+  border-radius: 4px;
+  font-size: 11px;
+  color: var(--text-muted);
+  cursor: default;
+}
+
+.hermdian-tag-icon {
+  display: flex;
+}
+
+.hermdian-tag-icon svg {
+  width: 11px;
+  height: 11px;
+}
+
+.hermdian-status-toggle {
+  cursor: pointer;
+  user-select: none;
+}
+
+.hermdian-status-toggle:hover {
+  background: var(--background-modifier-active-hover);
+}
+
+.hermdian-status-toggle input {
+  display: none;
+}
+
+.hermdian-status-toggle:has(input:checked) {
+  background: rgba(var(--color-accent-rgb), 0.15);
+  color: var(--text-accent);
+}
+
+.hermdian-status-file {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ==================== Scrollbar ==================== */
+.hermdian-messages::-webkit-scrollbar {
+  width: 5px;
+}
+
+.hermdian-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.hermdian-messages::-webkit-scrollbar-thumb {
+  background: var(--background-modifier-border);
+  border-radius: 3px;
+}
+
+.hermdian-messages::-webkit-scrollbar-thumb:hover {
+  background: var(--text-faint);
+}
+
+/* ==================== Settings Page ==================== */
+.hermdian-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.hermdian-empty-state svg {
+  opacity: 0.3;
+  margin-bottom: 12px;
+}
+
+.hermdian-empty-state p {
+  margin: 0 0 4px;
+  font-size: 14px;
+}
+
+.hermdian-empty-state span {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.hermdian-add-btn-container {
+  margin: 12px 0;
+}
+
+.hermdian-add-provider-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 1px dashed var(--background-modifier-border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.hermdian-add-provider-btn:hover {
+  border-color: var(--interactive-accent);
+  color: var(--interactive-accent);
+}
+
+.hermdian-add-provider-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.hermdian-custom-providers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.hermdian-provider-card {
+  background: var(--background-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--background-modifier-border);
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+
+.hermdian-provider-card:hover {
+  border-color: var(--text-faint);
+}
+
+.hermdian-provider-card-active {
+  border-color: var(--interactive-accent);
+}
+
+.hermdian-provider-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--background-modifier-hover);
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.hermdian-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-faint);
+}
+
+.hermdian-status-active {
+  background: var(--color-green);
+  box-shadow: 0 0 6px var(--color-green);
+}
+
+.hermdian-provider-name {
+  flex: 1;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.hermdian-active-tag {
+  font-size: 10px;
+  padding: 2px 6px;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-radius: 3px;
+}
+
+.hermdian-provider-info {
+  padding: 8px 12px;
+}
+
+.hermdian-info-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 4px 0;
+  font-size: 12px;
+}
+
+.hermdian-info-row:not(:last-child) {
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.hermdian-info-label {
+  color: var(--text-muted);
+  min-width: 32px;
+  font-size: 11px;
+}
+
+.hermdian-info-value {
+  color: var(--text-normal);
+  word-break: break-all;
+}
+
+.hermdian-info-code {
+  font-family: var(--font-monospace);
+  font-size: 11px;
+  color: var(--text-accent);
+  background: var(--background-modifier-hover);
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
+.hermdian-info-url {
+  font-family: var(--font-monospace);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.hermdian-provider-controls {
+  display: flex;
+  gap: 6px;
+  padding: 8px 12px;
+  background: var(--background-modifier-hover);
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+.hermdian-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.hermdian-btn-use {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+.hermdian-btn-use:hover {
+  filter: brightness(1.1);
+}
+
+.hermdian-btn-icon {
+  background: var(--background-primary);
+  color: var(--text-muted);
+  border: 1px solid var(--background-modifier-border);
+  padding: 4px 6px;
+}
+
+.hermdian-btn-icon:hover {
+  color: var(--text-normal);
+  border-color: var(--text-faint);
+}
+
+.hermdian-btn-danger:hover {
+  color: var(--text-error);
+  border-color: var(--text-error);
+}
+
+.hermdian-modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 20px;
+  padding-top: 12px;
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+.hermdian-btn-cancel {
+  background: var(--background-primary);
+  color: var(--text-muted);
+  border: 1px solid var(--background-modifier-border);
+}
+
+.hermdian-btn-cancel:hover {
+  color: var(--text-normal);
+}
+
+.hermdian-btn-save {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+.hermdian-btn-save:hover {
+  filter: brightness(1.1);
+}
+
+.hermdian-provider-preview {
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.hermdian-preview-header {
+  padding: 6px 12px;
+  background: var(--background-modifier-hover);
+  font-size: 11px;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.hermdian-preview-content {
+  padding: 12px;
+}
+
+.hermdian-preview-name {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.hermdian-preview-model {
+  font-size: 13px;
+  color: var(--text-accent);
+  margin-bottom: 8px;
+}
+
+.hermdian-preview-id,
+.hermdian-preview-url {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-monospace);
+  margin-top: 3px;
+}
+
+.hermdian-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hermdian-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hermdian-form-label {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.hermdian-form-hint {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.hermdian-form-input {
+  padding: 7px 10px;
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  color: var(--text-normal);
+  font-family: var(--font-text);
+  font-size: 13px;
+  transition: border-color 0.15s;
+}
+
+.hermdian-form-input:focus {
+  outline: none;
+  border-color: var(--interactive-accent);
+}
+
+.hermdian-form-input::placeholder {
+  color: var(--text-faint);
+}
+
+.hermdian-input-wrapper-modal {
+  display: flex;
+  gap: 6px;
+}
+
+.hermdian-input-wrapper-modal .hermdian-form-input {
+  flex: 1;
+}
+
+.hermdian-btn-toggle {
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.hermdian-btn-toggle:hover {
+  color: var(--text-normal);
+}
+
+.hermdian-btn-toggle svg {
+  width: 14px;
+  height: 14px;
+}
+
+.hermdian-form-error {
+  padding: 8px 12px;
+  background: rgba(var(--color-red-rgb), 0.1);
+  border: 1px solid var(--text-error);
+  border-radius: 4px;
+  color: var(--text-error);
+  font-size: 12px;
+  margin-top: 12px;
+}

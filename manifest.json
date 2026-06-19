@@ -1,0 +1,10 @@
+{
+  "id": "hermdian",
+  "name": "Hermdian",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Integrate Hermes Agent for intelligent knowledge management",
+  "author": "Hermdian",
+  "authorUrl": "https://github.com/hermdian/hermdian",
+  "isDesktopOnly": true
+}
