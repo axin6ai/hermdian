@@ -40,19 +40,32 @@ Think of it as your **AI-powered knowledge companion** — not just a chat windo
 
 ---
 
-## Quick Start
+## Download & Install
 
-```bash
-# Clone and install
-git clone https://github.com/your-username/hermdian.git
-cd hermdian
-npm install
+### Step 1: Download
 
-# Build and install to Obsidian
-./dev.sh dev
-```
+Go to [Releases](https://github.com/axin6ai/hermdian/releases) and download the latest version:
 
-Then restart Obsidian and enable the plugin in Settings → Community plugins.
+- `main.js`
+- `manifest.json`
+- `styles.css`
+
+### Step 2: Install
+
+1. Open Obsidian
+2. Go to Settings → Community plugins
+3. Click "Open plugins folder"
+4. Create a new folder called `hermdian`
+5. Copy the downloaded files into this folder
+6. Restart Obsidian
+7. Enable "Hermdian" in Community plugins
+
+### Step 3: Configure
+
+1. Click the 🧠 icon in the left sidebar
+2. Click the ⚙️ settings icon
+3. Choose your AI mode (Hermes CLI or Direct API)
+4. Configure your provider settings
 
 ---
 

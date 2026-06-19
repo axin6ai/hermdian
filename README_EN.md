@@ -37,39 +37,32 @@ Think of it as your **AI-powered knowledge companion** — not just a chat windo
 
 ---
 
-## Quick Start
+## Download & Install
 
-### 1. Install Plugin
+### Step 1: Download
 
-**Option A: Manual Install**
-1. Download `main.js`, `manifest.json`, `styles.css` from releases
-2. Copy to `{VaultFolder}/.obsidian/plugins/hermdian/`
-3. Restart Obsidian
-4. Enable plugin in Settings → Community plugins
+Go to [Releases](https://github.com/axin6ai/hermdian/releases) and download the latest version:
 
-**Option B: Build from Source**
-```bash
-git clone https://github.com/your-username/hermdian.git
-cd hermdian
-npm install
-./dev.sh dev
-```
+- `main.js`
+- `manifest.json`
+- `styles.css`
 
-### 2. Configure AI Provider
+### Step 2: Install
 
-**Hermes CLI Mode (Recommended)**
-1. Install [Hermes Agent](https://hermes-agent.nousresearch.com/)
-2. In Settings → Hermdian, select "Hermes CLI"
+1. Open Obsidian
+2. Go to Settings → Community plugins
+3. Click "Open plugins folder"
+4. Create a new folder called `hermdian`
+5. Copy the downloaded files into this folder
+6. Restart Obsidian
+7. Enable "Hermdian" in Community plugins
 
-**Direct API Mode**
-1. In Settings → Hermdian, select "Direct API"
-2. Click "+ Add" to configure your provider
-3. Fill in: Name, API URL, API Key, Model ID
+### Step 3: Configure
 
-### 3. Start Chatting
-
-- Click the 🧠 icon in the left sidebar
-- Or use `Ctrl/Cmd + P` → "Hermdian: Open Hermdian"
+1. Click the 🧠 icon in the left sidebar
+2. Click the ⚙️ settings icon
+3. Choose your AI mode (Hermes CLI or Direct API)
+4. Configure your provider settings
 
 ---
 
@@ -112,69 +105,6 @@ Hermdian supports any OpenAI-compatible API:
 
 ---
 
-## Development
-
-```bash
-# Clone repository
-git clone https://github.com/your-username/hermdian.git
-cd hermdian
-
-# Install dependencies
-npm install
-
-# Development mode (watch + build)
-npm run dev
-
-# Build and install to Obsidian
-./dev.sh dev
-
-# Build only
-./dev.sh build
-```
-
----
-
-## Project Structure
-
-```
-hermdian/
-├── src/
-│   ├── main.ts              # Plugin entry point
-│   ├── types.ts             # TypeScript types
-│   ├── views/
-│   │   └── HermdianView.ts  # Main chat view
-│   ├── services/
-│   │   └── AIService.ts     # AI integration (CLI + API)
-│   ├── settings/
-│   │   └── SettingTab.ts    # Settings panel
-│   └── styles/
-│       └── index.css        # Styles
-├── docs/
-│   ├── PRD.md               # Product requirements
-│   └── IMPLEMENTATION.md    # Implementation guide
-├── manifest.json
-├── package.json
-└── dev.sh                   # Development script
-```
-
----
-
-## Why Hermdian?
-
-### vs Claudian
-Claudian is a powerful Obsidian plugin for Claude/Codex. Hermdian is inspired by Claudian's UI but:
-- Supports **any OpenAI-compatible API** (not just Claude)
-- Works with **Hermes Agent** ecosystem
-- **Lighter weight** — focused on core chat and file interaction
-- **More flexible** — custom provider support
-
-### vs Other AI Plugins
-- 🔒 **Privacy First** — Your data stays local (Hermes CLI mode)
-- 💰 **Cost Effective** — Use free/cheap models
-- 🛠️ **Developer Friendly** — Open source, MIT license
-
----
-
 ## Documentation
 
 - [Product Requirements (PRD)](./docs/PRD.md)
@@ -198,6 +128,6 @@ MIT License
 
 ## Support
 
-- 🐛 [Report Issues](https://github.com/your-username/hermdian/issues)
-- 💡 [Feature Requests](https://github.com/your-username/hermdian/issues)
+- 🐛 [Report Issues](https://github.com/axin6ai/hermdian/issues)
+- 💡 [Feature Requests](https://github.com/axin6ai/hermdian/issues)
 - ⭐ Star this repo if you find it useful!

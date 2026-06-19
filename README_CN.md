@@ -37,39 +37,32 @@
 
 ---
 
-## 快速开始
+## 下载安装
 
-### 1. 安装插件
+### 第一步：下载
 
-**方式一：手动安装**
-1. 从 Releases 下载 `main.js`、`manifest.json`、`styles.css`
-2. 复制到 `{Vault文件夹}/.obsidian/plugins/hermdian/`
-3. 重启 Obsidian
-4. 在 Settings → Community plugins 中启用插件
+前往 [Releases](https://github.com/axin6ai/hermdian/releases) 页面，下载最新版本的文件：
 
-**方式二：从源码构建**
-```bash
-git clone https://github.com/your-username/hermdian.git
-cd hermdian
-npm install
-./dev.sh dev
-```
+- `main.js`
+- `manifest.json`
+- `styles.css`
 
-### 2. 配置 AI 提供商
+### 第二步：安装
 
-**Hermes CLI 模式（推荐）**
-1. 安装 [Hermes Agent](https://hermes-agent.nousresearch.com/)
-2. 在 Settings → Hermdian 中选择 "Hermes CLI"
+1. 打开 Obsidian
+2. 进入 设置 → 第三方插件
+3. 点击「打开插件文件夹」
+4. 创建一个新文件夹，命名为 `hermdian`
+5. 将下载的三个文件复制到该文件夹
+6. 重启 Obsidian
+7. 在第三方插件中启用「Hermdian」
 
-**直连 API 模式**
-1. 在 Settings → Hermdian 中选择 "直连 API"
-2. 点击 "+ 添加" 配置你的提供商
-3. 填写：名称、接口地址、API Key、Model ID
+### 第三步：配置
 
-### 3. 开始对话
-
-- 点击左侧栏的 🧠 图标
-- 或使用 `Ctrl/Cmd + P` → "Hermdian: Open Hermdian"
+1. 点击左侧栏的 🧠 图标
+2. 点击右上角的 ⚙️ 设置图标
+3. 选择 AI 模式（Hermes CLI 或直连 API）
+4. 配置你的提供商信息
 
 ---
 
@@ -112,69 +105,6 @@ Hermdian 支持所有 OpenAI 兼容的 API：
 
 ---
 
-## 开发指南
-
-```bash
-# 克隆仓库
-git clone https://github.com/your-username/hermdian.git
-cd hermdian
-
-# 安装依赖
-npm install
-
-# 开发模式（监听 + 构建）
-npm run dev
-
-# 构建并安装到 Obsidian
-./dev.sh dev
-
-# 仅构建
-./dev.sh build
-```
-
----
-
-## 项目结构
-
-```
-hermdian/
-├── src/
-│   ├── main.ts              # 插件入口
-│   ├── types.ts             # TypeScript 类型定义
-│   ├── views/
-│   │   └── HermdianView.ts  # 主对话视图
-│   ├── services/
-│   │   └── AIService.ts     # AI 集成（CLI + API）
-│   ├── settings/
-│   │   └── SettingTab.ts    # 设置面板
-│   └── styles/
-│       └── index.css        # 样式文件
-├── docs/
-│   ├── PRD.md               # 产品需求文档
-│   └── IMPLEMENTATION.md    # 实现方案文档
-├── manifest.json
-├── package.json
-└── dev.sh                   # 开发脚本
-```
-
----
-
-## 为什么选择 Hermdian？
-
-### 与 Claudian 的区别
-Claudian 是一个强大的 Claude/Codex Obsidian 插件。Hermdian 受 Claudian UI 启发，但：
-- 支持**任意 OpenAI 兼容 API**（不仅限于 Claude）
-- 与 **Hermes Agent** 生态集成
-- **更轻量** — 专注核心对话和文件交互
-- **更灵活** — 自定义提供商支持
-
-### 与其他 AI 插件的区别
-- 🔒 **隐私优先** — 数据本地处理（Hermes CLI 模式）
-- 💰 **成本友好** — 可使用免费/低价模型
-- 🛠️ **开发者友好** — 开源，MIT 协议
-
----
-
 ## 文档
 
 - [产品需求文档 (PRD)](./docs/PRD.md)
@@ -198,6 +128,6 @@ MIT License
 
 ## 支持
 
-- 🐛 [报告问题](https://github.com/your-username/hermdian/issues)
-- 💡 [功能建议](https://github.com/your-username/hermdian/issues)
+- 🐛 [报告问题](https://github.com/axin6ai/hermdian/issues)
+- 💡 [功能建议](https://github.com/axin6ai/hermdian/issues)
 - ⭐ 如果觉得有用，请点个 Star！
